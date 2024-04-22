@@ -1,0 +1,11 @@
+.head {
+    /* opacity: 0; */
+    background-color: brown;
+    transition: opacity 0.3s ease; /* Tempo e curva de transição */
+    /* Outras propriedades de estilo do cabeçalho */
+  }
+  
+  .head.visible {
+    /* opacity: 1; */
+    background-color: aqua;
+  }

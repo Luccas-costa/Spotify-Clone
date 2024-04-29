@@ -1,16 +1,27 @@
+"use client";
 import Main_Header from "@/components/Main_Header/Main_Header";
 import Sidebar from "@/components/Sidebar/Sidebar";
 import Footer from "@/components/Footer/Footer";
+import { useState } from "react";
 
 export default function Home() {
+  const [KeyAlbum, setKeyAlbum] = useState<number>(6);
+
+  function Album(key: number) {
+    console.log(key);
+    setKeyAlbum(key);
+  }
+
+  let chavefinal = KeyAlbum;
+
   return (
     <div className='h-screen flex flex-col'>
       <div className='flex flex-1 overflow-auto'>
-        {/* ta proximo passo é poder clilcar numa playlist no main e ela ir aparacer no expositor e o tempo resetar no player para começar a dar inicio a funcionalidade do player de musica  */}
         <Sidebar />
-        <Main_Header />
+        <Main_Header conexao={Album} />
+        {/* tudo feito pra  trocar a logo do exipositor agora e fazer tocar a musica quando der clicar na playlist e dps fazer os controles de para e tudo mais funcionar */}
       </div>
-      <Footer />
+      <Footer chave={chavefinal} />
     </div>
   );
 }

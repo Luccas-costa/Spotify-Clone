@@ -7,18 +7,21 @@ interface ForYouProps {
   imagem: string;
   titulo: string;
   subtitulo: string;
+  conexao: (key: number) => void;
 }
 
-export default function ForYou(props: ForYouProps) {
+export default function ForYou({
+  imagem,
+  titulo,
+  subtitulo,
+  conexao,
+}: ForYouProps) {
   return (
-    <div>
-      <a
-        href=''
-        className='bg-white/5 p-3 rounded-lg flex flex-col gap-2 hover:bg-white/10 group'
-      >
+    <div onClick={() => conexao(7)}>
+      <a className='bg-white/5 p-3 rounded-lg flex flex-col gap-2 hover:bg-white/10 group'>
         <div className='relative'>
           <Image
-            src={props.imagem}
+            src={imagem}
             className='w-full'
             width={100}
             height={100}
@@ -28,8 +31,8 @@ export default function ForYou(props: ForYouProps) {
             <Play weight='fill' size={24} />
           </button>
         </div>
-        <strong className='font-semibold'>{props.titulo}</strong>
-        <span className='text-sm text-zinc-400'>{props.subtitulo}</span>
+        <strong className='font-semibold'>{titulo}</strong>
+        <span className='text-sm text-zinc-400'>{subtitulo}</span>
       </a>
     </div>
   );

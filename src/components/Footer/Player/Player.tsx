@@ -12,14 +12,36 @@ import {
   RepeatOnce,
 } from "@phosphor-icons/react/dist/ssr";
 
+// interface PlayerProps {
+//   audioPlaying: boolean; // Estado que indica se o áudio está sendo reproduzido
+//   playAudio: () => void; // Função para reproduzir o áudio
+// }
+
+//lembrar da biblioteca howler
+
 export default function Player() {
+  // { audioPlaying, playAudio }: PlayerProps
   const [pause_play, setpause_play] = useState(false);
   const [shufle, setshufle] = useState(false);
   const [repeatSequence, setRepeatSequence] = useState(0);
 
+  // const handleClick = () => {
+  //   setpause_play(!pause_play);
+
+  //   // Se o áudio estiver sendo reproduzido e o botão for clicado, pausa o áudio
+  //   if (audioPlaying && pause_play) {
+  //     // Pausar o áudio aqui
+  //   } else if (audioPlaying && !pause_play) {
+  //     // Se o áudio estiver sendo reproduzido e o botão for clicado, reproduzir o áudio
+  //     playAudio();
+  //   }
+  // };
+
   const handleClick = () => {
     setpause_play(!pause_play);
   };
+
+  //acima e o player de musica mesmo
 
   const handleClick2 = () => {
     setshufle(!shufle);
